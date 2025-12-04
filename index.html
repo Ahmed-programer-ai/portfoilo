@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Badawi - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #E0E0E0;
+            overflow-x: hidden;
+        }
+
+        #three-js-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 900px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .text-green-400 {
+            color: #4CAF50;
+        }
+
+        .card {
+            background-color: rgba(25, 25, 25, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #4CAF50;
+            margin-top: 8px;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            color: #121212;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-on-scroll {
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+    <!-- Three.js Container -->
+    <div id="three-js-container"></div>
+
+    <!-- Header Section -->
+    <header class="text-center py-12 relative z-10">
+        <h1 class="text-5xl md:text-6xl font-bold text-green-400 animate-pulse">Ahmed Badawi</h1>
+        <p class="mt-4 text-xl md:text-2xl font-light">Full Stack Web Developer</p>
+        <p class="mt-2 text-md md:text-lg font-extralight text-gray-400">Crafting efficient, user-friendly solutions
+            with modern web technologies.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto space-y-12">
+
+        <!-- Summary Section -->
+        <section id="summary" class="card rounded-xl p-8 shadow-lg fade-in-on-scroll">
+            <h2 class="text-3xl font-bold section-header">Summary</h2>
+            <p class="mt-6 text-lg">
+                Full stack web-developer skilled in designing, building, and maintaining dynamic web applications.
+                Proficient in languages and technologies including HTML, CSS, JavaScript, Python, SQL, C#, and Java.
+                Passionate about creating efficient, user-friendly solutions and continuously learning emerging web
+                technologies.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="card rounded-xl p-8 shadow-lg fade-in-on-scroll" style="animation-delay: 0.2s;">
+            <h2 class="text-3xl font-bold section-header">Skills</h2>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Frontend -->
+                <div class="p-6 border-l-4 border-green-400 rounded-lg bg-gray-800">
+                    <h3 class="text-xl font-semibold text-green-400">Frontend</h3>
+                    <p class="mt-2">HTML, CSS, JavaScript, React.js</p>
+                </div>
+                <!-- Backend -->
+                <div class="p-6 border-l-4 border-green-400 rounded-lg bg-gray-800">
+                    <h3 class="text-xl font-semibold text-green-400">Backend</h3>
+                    <p class="mt-2">Python, Java, Node.js</p>
+                </div>
+                <!-- Databases -->
+                <div class="p-6 border-l-4 border-green-400 rounded-lg bg-gray-800">
+                    <h3 class="text-xl font-semibold text-green-400">Databases</h3>
+                    <p class="mt-2">SQL</p>
+                </div>
+                <!-- Version Control -->
+                <div class="p-6 border-l-4 border-green-400 rounded-lg bg-gray-800">
+                    <h3 class="text-xl font-semibold text-green-400">Version Control</h3>
+                    <p class="mt-2">Git, Github</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="card rounded-xl p-8 shadow-lg fade-in-on-scroll" style="animation-delay: 0.4s;">
+            <h2 class="text-3xl font-bold section-header">Experience</h2>
+            <ul class="mt-6 space-y-6">
+                <li class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="text-xl font-semibold text-green-400">Interactive Chatbot Development</h4>
+                    <p class="mt-2 text-gray-300">Experienced in developing interactive chatbots, including a
+                        general-purpose bot and a Quran interpretation bot.</p>
+                </li>
+                <li class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="text-xl font-semibold text-green-400">Product Management</h4>
+                    <p class="mt-2 text-gray-300">Skilled in product management, overseeing project planning, execution,
+                        and optimization. Adept at combining technical development with strategic product leadership to
+                        deliver impactful solutions.</p>
+                </li>
+                <li class="p-4 rounded-lg bg-gray-800">
+                    <h4 class="text-xl font-semibold text-green-400">Freelancer on Mostaql</h4>
+                    <p class="mt-2 text-gray-300">Worked as a freelancer on Mostaql platform, providing services to
+                        clients remotely.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="card rounded-xl p-8 shadow-lg fade-in-on-scroll" style="animation-delay: 0.6s;">
+            <h2 class="text-3xl font-bold section-header">Contact Me</h2>
+            <div class="mt-6 space-y-4">
+                <div class="flex items-center space-x-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <a href="mailto:albdwyahmd080@gmail.com"
+                        class="text-lg text-gray-300 hover:underline">albdwyahmd080@gmail.com</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <a href="tel:01002030292" class="text-lg text-gray-300 hover:underline">01002030292</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <div id="scrollToTopBtn" class="scroll-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+                clip-rule="evenodd" />
+        </svg>
+    </div>
+
+    <script>
+        const container = document.getElementById('three-js-container');
+        let camera, scene, renderer, particles, particleSystem, lines;
+        let mouseX = 0, mouseY = 0;
+        const windowHalfX = window.innerWidth / 2;
+        const windowHalfY = window.innerHeight / 2;
+        const particleCount = 200;
+        const particleSize = 2;
+        const maxDistance = 100;
+
+        function init() {
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 400;
+            scene = new THREE.Scene();
+
+            // Particles
+            particles = new THREE.BufferGeometry();
+            const positions = [];
+            const colors = [];
+            const color = new THREE.Color();
+
+            for (let i = 0; i < particleCount; i++) {
+                const x = Math.random() * 800 - 400;
+                const y = Math.random() * 800 - 400;
+                const z = Math.random() * 800 - 400;
+                positions.push(x, y, z);
+                color.setHSL(0.3, 1, 0.5); // Green color
+                colors.push(color.r, color.g, color.b);
+            }
+
+            particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+            particles.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+            const particleMaterial = new THREE.PointsMaterial({
+                size: particleSize,
+                vertexColors: true
+            });
+
+            particleSystem = new THREE.Points(particles, particleMaterial);
+            scene.add(particleSystem);
+
+            // Lines
+            lines = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({
+                color: 0x4CAF50,
+                transparent: true,
+                opacity: 0.5,
+                blending: THREE.AdditiveBlending
+            }));
+            scene.add(lines);
+
+            renderer = new THREE.WebGLRenderer({ antialiasing: true, alpha: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function onDocumentMouseMove(event) {
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            // Update particle positions
+            const positions = particleSystem.geometry.attributes.position.array;
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3 + 1] += 0.5;
+                if (positions[i * 3 + 1] > 400) {
+                    positions[i * 3 + 1] = -400;
+                }
+            }
+            particleSystem.geometry.attributes.position.needsUpdate = true;
+
+            // Update lines
+            const linePositions = [];
+            const particlePositions = particles.attributes.position.array;
+
+            for (let i = 0; i < particleCount; i++) {
+                for (let j = i + 1; j < particleCount; j++) {
+                    const dx = particlePositions[i * 3] - particlePositions[j * 3];
+                    const dy = particlePositions[i * 3 + 1] - particlePositions[j * 3 + 1];
+                    const dz = particlePositions[i * 3 + 2] - particlePositions[j * 3 + 2];
+                    const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+                    if (distance < maxDistance) {
+                        linePositions.push(
+                            particlePositions[i * 3], particlePositions[i * 3 + 1], particlePositions[i * 3 + 2],
+                            particlePositions[j * 3], particlePositions[j * 3 + 1], particlePositions[j * 3 + 2]
+                        );
+                    }
+                }
+            }
+            lines.geometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+            lines.geometry.attributes.position.needsUpdate = true;
+
+            renderer.render(scene, camera);
+        }
+
+        window.onload = function () {
+            init();
+            animate();
+
+            // Other JS from previous version
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            window.onscroll = function () {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = "flex";
+                } else {
+                    scrollToTopBtn.style.display = "none";
+                }
+            };
+
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-on-scroll').forEach(section => {
+                observer.observe(section);
+            });
+        };
+    </script>
+</body>
+
+</html>
